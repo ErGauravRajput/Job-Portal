@@ -18,8 +18,8 @@ app.use(cookieParser());
 
 const corsOptions = {
   origin: [
-    "http://localhost:5173", // dev
-    // "https://" // Vercel live domain
+    "https://job-portal-usgx.onrender.com", // dev
+
   ],
   credentials: true,
 };
