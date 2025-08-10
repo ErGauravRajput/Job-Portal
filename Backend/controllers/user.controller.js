@@ -48,7 +48,11 @@ export const register = async (req, res) => {
     }
 
     const fileUri = getDataUri(file);
-    const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+    const cloudResponse = await cloudinary.uploader.upload(fileUri.content,{
+      {
+        resource_type: "raw",   
+        access_mode: "public"   // makes it publicly accessible immediately
+      });
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
